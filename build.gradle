@@ -1,0 +1,35 @@
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+
+    group = 'com'
+    version = '0.0.1-SNAPSHOT'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    //仓库
+    repositories {
+        mavenLocal()
+        maven {
+            url "http://maven.aliyun.com/nexus/content/groups/public"
+        }
+        mavenCentral()
+    }
+
+    archivesBaseName = project.name
+}
+
+ext {
+    dubbo_version = '2.6.0'
+    spring_version = '4.3.13.RELEASE'
+    lombok_version = '1.16.16'
+    zk_version = '3.3.3'
+    zk_client_version = '0.2'
+    netty_version = '4.1.19.Final'
+}
+
+subprojects {
+    [compileJava, compileTestJava, javadoc]*.options*.encoding = 'UTF-8'
+}
