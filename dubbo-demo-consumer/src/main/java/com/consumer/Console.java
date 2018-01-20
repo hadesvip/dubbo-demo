@@ -9,7 +9,7 @@ public class Console {
   public static void main(String[] args) {
 
     ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
-        new String[]{"classpath:dubbo-demo-consumer.xml"});
+        new String[]{"classpath*:dubbo-demo-consumer.xml"});
 
     applicationContext.start();
 

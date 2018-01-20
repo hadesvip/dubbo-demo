@@ -27,4 +27,15 @@ public class User implements Serializable {
     this.userName = userName;
     this.email = email;
   }
+
+
+  @Override
+  public String toString() {
+    final StringBuffer sb = new StringBuffer("User{");
+    sb.append("userId='").append(userId).append('\'');
+    sb.append(", userName='").append(userName).append('\'');
+    sb.append(", email='").append(email).append('\'');
+    sb.append('}');
+    return sb.toString();
+  }
 }
